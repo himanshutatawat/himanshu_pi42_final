@@ -33,12 +33,16 @@
     top: 0;
     background-color: black; /* Setting navbar background to pure black */
   }
-  
+
+
   .logo h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #39ff14; /* Neon blue color */
-  }
+  font-size: 1.5rem; /* Keep font size small */
+  color: #ff6347; /* Change color to a different shade */
+  margin: auto; /* Center the logo horizontally */
+}
+
+
+ 
   
   .navLinks {
     display: flex;
