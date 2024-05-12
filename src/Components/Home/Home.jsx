@@ -73,34 +73,37 @@ function Home(props) {
       <div className={styles.navbar}>
         <div className={styles.logo}>
           <img src={bg} alt="Logo" className={styles.logoImage} />
+          <h1>My Brand</h1>
         </div>
         <div className={styles.navLinks}>
           {currentUser ? (
-            <Link to="/logout" className={`${styles.link} ${styles.neonEffect}`}>Logout</Link>
+            <Link to="/logout" className={styles.link}>Logout</Link>
           ) : (
             <>
-              <Link to="/login" className={`${styles.link} ${styles.neonEffect}`} style={{ marginRight: '20px' }}>Login</Link>
-              <Link to="/signup" className={`${styles.link} ${styles.neonEffect}`}>Signup</Link>
+              <Link to="/login" className={styles.link}>Login</Link>
+              <Link to="/signup" className={styles.link}>Signup</Link>
             </>
           )}
         </div>
       </div>
-      <h1 className={`${styles.heading} `}>Trade Crypto Perpetual Futures in <span style={{ color: "blue" }}> INR </span></h1>
-      <p className={`${styles.message} ${styles.neonEffect}`}>{currentUser ? `Welcome back, ${currentUser?.displayName}!` : "Please login to view real-time updates."}</p>
-      {currentUser ? (
-        isLoading ? (
-          <div className={styles.loadingContainer}>
-            <CircularProgress />
-            <p>Loading data...</p>
-          </div>
+      <div className={styles.content}>
+        <h2>Welcome to our Crypto Trading Platform</h2>
+        <p>{currentUser ? `Welcome back, ${currentUser?.displayName}!` : "Please login to view real-time updates."}</p>
+        {currentUser ? (
+          isLoading ? (
+            <div className={styles.loading}>
+              <CircularProgress />
+              <p>Loading data...</p>
+            </div>
+          ) : (
+            <LoggedInUsers />
+          )
         ) : (
-          <LoggedInUsers />
-        )
-      ) : (
-        <div className={styles.chartContainer}>
-          <ApexCharts options={options} series={series} type="candlestick" height={410} width={500} />
-        </div>
-      )}
+          <div className={styles.chart}>
+            <ApexCharts options={options} series={series} type="candlestick" height={410} width={500} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
