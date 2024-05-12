@@ -11,16 +11,21 @@
   }
   
   .container {
-    background: linear-gradient(135deg, black, #010111, #020225, black);
-    background-size: 400% 400%; /* Extends the gradient well beyond the container size */
-    animation: gradientWave 15s ease infinite; /* Applies the animation */
-    color:white; /* Neon blue color */
-    height: 100vh; /* Full height of the viewport */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  --gradient-color-1: black;
+  --gradient-color-2: #010111;
+  --gradient-color-3: #020225;
+  --gradient-color-4: black;
+  background: linear-gradient(135deg, var(--gradient-color-1), var(--gradient-color-2), var(--gradient-color-3), var(--gradient-color-4));
+  background-size: 400% 400%;
+  animation: gradientWave 15s ease infinite;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
   
   
   .navbar {
@@ -41,8 +46,9 @@
   margin: auto; /* Center the logo horizontally */
 }
 .logo img {
-  max-width: 100px; /* Set maximum width for the logo image */
+  max-width: 70px; /* Set maximum width for the logo image */
   height: auto; /* Maintain aspect ratio */
+  
 }
 
 
