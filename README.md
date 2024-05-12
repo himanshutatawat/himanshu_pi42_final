@@ -20,10 +20,7 @@ npm run dev
 
 
 Deployment
-The application is deployed on Netlify and can be accessed at:https://main--pi42-suraj.netlify.app/
+The application is deployed on Netlify and can be accessed at:https://crypto11x.netlify.app/
 
 Contact information:
-SURAJ SHARMA
-7838397472
-surajrace21@gmail.com
-https://www.linkedin.com/in/suraj-sharma-239894223/
+Himanshu Tatawat
