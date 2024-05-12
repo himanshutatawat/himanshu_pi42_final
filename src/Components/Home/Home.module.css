@@ -40,6 +40,11 @@
   color: #ff6347; /* Change color to a different shade */
   margin: auto; /* Center the logo horizontally */
 }
+.logo img {
+  max-width: 100px; /* Set maximum width for the logo image */
+  height: auto; /* Maintain aspect ratio */
+}
+
 
 
  
