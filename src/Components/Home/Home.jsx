@@ -19,7 +19,7 @@ function Home(props) {
       <div className={styles.navbar}>
         <div className={styles.logo}>
           <img src={bg} alt="Logo" className={styles.logoImage} />
-          <h1>My Brand</h1>
+          <h1>PI 42</h1>
         </div>
         <div className={styles.navLinks}>
           {currentUser ? (
@@ -33,7 +33,7 @@ function Home(props) {
         </div>
       </div>
       <div className={styles.content}>
-        <div>
+        
       <h2>Welcome to Pi42!</h2>
       <p>
         Pi42 is your go-to platform for trading crypto contracts. With real-time updates on crypto prices and a user-friendly interface, we make it easy for you to stay ahead in the crypto market.
@@ -48,7 +48,7 @@ function Home(props) {
       <p>
         Ready to start trading? Login or sign up now to get started!
       </p>
-    </div>
+    
         <p>{currentUser ? `Welcome back, ${currentUser?.displayName}!` : "Please login to view real-time updates."}</p>
         {currentUser ? (
           isLoading ? (
