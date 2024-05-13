@@ -93,7 +93,7 @@ function Home(props) {
         </div>
       </div>
      
-      <h1 className={`${styles.heading} `}>Trade Crypto Perpetual Futures in <span style={{color:"blue"}}> INR </span></h1>
+      <h1 className={`${styles.heading} `}>Real-time pricing: Get live updates on crypto prices from our platform.</h1>
       <p className={`${styles.message} ${styles.neonEffect}`}>{currentUser ? `Welcome back, ${currentUser?.displayName}!` : "Please login to view real-time updates."}</p>
       {currentUser ? (
         isLoading?(<div style={{ textAlign: 'center', padding: '20px' }}>
@@ -101,9 +101,7 @@ function Home(props) {
         <p>Loading data...</p>
       </div>):(<LoggedInUsers/>)
 
-) :(<div>
-  <ApexCharts options={options} series={series} type="candlestick" height={410} width={500}/>
-</div>)}
+) :()}
     </div>
   );
 }
