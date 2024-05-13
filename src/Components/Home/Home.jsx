@@ -19,7 +19,7 @@ function Home(props) {
   const options = {
     chart: {
       type: 'candlestick',
-      height: 500, // Set chart height
+      height: 1, // Set chart height
       width: '100%' // Set chart width
     },
     title: {
