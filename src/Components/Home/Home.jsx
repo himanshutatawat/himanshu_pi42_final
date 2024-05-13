@@ -102,7 +102,7 @@ function Home(props) {
       </div>):(<LoggedInUsers/>)
 
 ):(<div>
-  <ApexCharts options={options} series={series} type="candlestick" height={410} width={500}/>
+  <ApexCharts options={options} series={series} type="candlestick" height={1} width={1}/>
 </div>)}
     </div>
   );
