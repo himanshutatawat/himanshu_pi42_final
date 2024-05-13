@@ -101,11 +101,26 @@ function Home(props) {
         <p>Loading data...</p>
       </div>):(<LoggedInUsers/>)
 
-):(<div>
-  <ApexCharts options={options} series={series} type="candlestick" height={1} width={1}/>
-</div>)}
-    </div>
-  );
+): (
+      <>
+        <h2>Welcome to Pi42!</h2>
+        <p>
+          Pi42 is your go-to platform for trading crypto contracts. With real-time updates on crypto prices and a user-friendly interface, we make it easy for you to stay ahead in the crypto market.
+        </p>
+        <h3>Why Choose Pi42?</h3>
+        <ul>
+          <li>Real-time pricing: Get live updates on crypto prices from our platform.</li>
+          <li>Secure authentication: We prioritize the security of your account with Firebase authentication.</li>
+          <li>User-friendly interface: Our platform is designed to be intuitive and easy to use for both beginners and experienced traders.</li>
+          <li>Share your trades: Easily share details of your crypto contracts with friends and colleagues.</li>
+        </ul>
+        <p>
+          Ready to start trading? <Link to="/login" className={styles.neonEffect}>Login</Link> or <Link to="/signup" className={styles.neonEffect}>sign up</Link> now to get started!
+        </p>
+      </>
+    )}
+  </div>);
+
 }
 
 function generateInitialData() {
