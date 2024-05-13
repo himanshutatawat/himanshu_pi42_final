@@ -101,7 +101,9 @@ function Home(props) {
         <p>Loading data...</p>
       </div>):(<LoggedInUsers/>)
 
-) :()}
+) :(<div>
+  <ApexCharts options={options} series={series} type="candlestick" height={410} width={500}/>
+</div>)}
     </div>
   );
 }
