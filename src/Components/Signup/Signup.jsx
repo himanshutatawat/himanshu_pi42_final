@@ -91,7 +91,101 @@ function Signup() {
               '& .MuiInputBase-input': { color: 'black' }, // Changes the input text color to black
             }}
           />
-          {/* Other input fields remain the same */}
+          <TextField
+            label="Email"
+            variant="outlined"
+            value={values.email}
+            onChange={handleChange('email')}
+            placeholder="Enter email address"
+            fullWidth
+            InputLabelProps={{
+              style: { color: 'black' },
+            }}
+            InputProps={{
+              sx: {
+                '& fieldset': {
+                  borderColor: 'black',
+                },
+                '&:hover fieldset': {
+                  borderColor: 'black',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'red',
+                },
+              },
+              inputProps: {
+                style: { color: 'black' },
+                placeholderTextColor: 'gray',
+              },
+            }}
+            sx={{
+              '& .MuiInputBase-input': { color: 'black' },
+            }}
+          />
+          <TextField
+            label="Password"
+            variant="outlined"
+            type="password"
+            value={values.pass}
+            onChange={handleChange('pass')}
+            placeholder="Enter Password"
+            fullWidth
+            InputLabelProps={{
+              style: { color: 'black' },
+            }}
+            InputProps={{
+              sx: {
+                '& fieldset': {
+                  borderColor: 'black',
+                },
+                '&:hover fieldset': {
+                  borderColor: 'black',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'red',
+                },
+              },
+              inputProps: {
+                style: { color: 'black' },
+                placeholderTextColor: 'gray',
+              },
+            }}
+            sx={{
+              '& .MuiInputBase-input': { color: 'black' },
+            }}
+          />
+          <TextField
+            label="Confirm Password"
+            variant="outlined"
+            type="password"
+            value={values.confirmPass}
+            onChange={handleChange('confirmPass')}
+            placeholder="Confirm Password"
+            fullWidth
+            InputLabelProps={{
+              style: { color: 'black' },
+            }}
+            InputProps={{
+              sx: {
+                '& fieldset': {
+                  borderColor: 'black',
+                },
+                '&:hover fieldset': {
+                  borderColor: 'black',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'red',
+                },
+              },
+              inputProps: {
+                style: { color: 'black' },
+                placeholderTextColor: 'gray',
+              },
+            }}
+            sx={{
+              '& .MuiInputBase-input': { color: 'black' },
+            }}
+          />
         </Box>
         <div className={styles.footer}>
           <b className={styles.error}>{errorMsg}</b>
