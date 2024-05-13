@@ -9,54 +9,70 @@ import LoggedInUsers from "../LoggedInUsers/LoggedInUsers"
 import { useAuth } from '../Context/AuthContext';
 
 function Home(props) {
-  
+  const [series, setSeries] = useState([{
+    data: generateInitialData()
+  }]);
   const { currentUser } = useAuth();
   const [isLoading, setIsLoading] = useState(true);
 
-  React.useEffect(() => {
-    // Simulate loading state for demonstration
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000); // Simulated loading delay
-  }, []);
+  console.log(currentUser,"currr ")
+  const options = {
+    chart: {
+      type: 'candlestick',
+      height: 500, // Set chart height
+      width: '100%' // Set chart width
+    },
+    title: {
+      text: 'Stock Price Movement',
+      align: 'left'
+    },
+    xaxis: {
+      type: 'datetime'
+    },
+    tooltip: {
+      enabled: true,
+      theme: 'dark', // You can use 'dark' or 'light' based on your preference or set custom styles
+      style: {
+        fontSize: '12px',
+        fontFamily: undefined
+      },
+      x: {
+        show: true,
+        format: 'dd MMM yyyy'
+      },
+      y: {
+        formatter: function (val) {
+          return val.toFixed(2);
+        }
+      },
+      // Custom tooltip style
+      fillSeriesColor: false,
+      marker: {
+        show: false,
+      },
+      fixed: {
+        enabled: false,
+        position: 'topRight',
+        offsetX: 0,
+        offsetY: 0,
+      },
+    },
+    yaxis: {
+      tooltip: {
+        enabled: true
+      }
+    }
+  };
+  
 
-  if (!currentUser) {
-    return (
-      <div className={styles.container}>
-        <div className={styles.navbar}>
-          <div className={styles.logo}>
-            <img
-              src={logoImage}
-              style={{ width: "90px", height: "50px" }}
-              alt="Logo"
-            />
-          </div>
-          <div className={styles.navLinks}>
-            <Link to="/login" className={`${styles.link} ${styles.neonEffect}`}>
-              Login
-            </Link>
-            <Link
-              to="/signup"
-              className={`${styles.link} ${styles.neonEffect}`}
-            >
-              Signup
-            </Link>
-          </div>
-        </div>
-        <h1 className={styles.heading}>
-          Trade Crypto Perpetual Futures in INR
-        </h1>
-        <p className={styles.subheading}>
-          India's First Native Crypto Derivatives Platform with Lightning-Fast
-          Settlement in Rupees
-        </p>
-        <p className={`${styles.message} ${styles.neonEffect}`}>
-          Please login to view real-time updates.
-        </p>
-      </div>
-    );
-  }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const newData = [...series[0].data, ...generateNewData(series[0].data)];
+      setSeries([{ data: newData }]);
+      setIsLoading(false);
+    }, 5000);  
+    return () => clearInterval(interval);
+  }, [series]);
 
   return (
     <div className={styles.container}>
