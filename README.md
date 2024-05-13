@@ -1,26 +1,20 @@
-Crypto Live Ticker Dashboard
+Pi42 Assignment
+Pi42 assignment for junior and mid level developer roles
 
-Overview
-This web application provides real-time cryptocurrency pricing and allows authenticated users to access a dynamic list of crypto contracts (tokens) with their latest market data. The application is built using vite+JSX with Firebase for authentication and websockets for fetching live cryptocurrency data.
+Live Link for site : https://crypto9x.netlify.app/
 
-Features
-Firebase Authentication: Secure user authentication to access the live ticker data.
-Live Crypto Pricing: Real-time price updates for various cryptocurrencies sourced from Pi42 websockets.
-Sortable Data Columns: Users can sort the cryptocurrency data based on the 24-hour change percentage.
-Sharing Functionality: Each row in the ticker includes a share button to send crypto contract details via WhatsApp. If sharing is not supported, there's an option to download the data instead.
-
-Getting Started
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-npm install
-Set up Firebase:
-Create a Firebase project and configure the authentication method.
-Add your project's Firebase configuration to the environment variables.
-npm run dev
+Contact Details:
+HIMANSHU TATAWAT
+linkedin.com/in/himanshu-tatawat-74209b214/
 
 
-Deployment
-The application is deployed on Netlify and can be accessed at:https://crypto11x.netlify.app/
 
-Contact information:
-Himanshu Tatawat
+Task
+Create a web application that uses firebase for authentication. Once after the authentication is successful, add a page with all the crypto contracts (tokens listed in Pi42) with their live pricing coming from Pi42 web socket. Check out the browser network tab to filter out websocket data. Typescript/Golang is preferred. If you are comfortable in any strongly typed language, that is fine as well. We use typescript(nestjs/nextjs) on our stack and upcoming modules are being built in Golang.
+
+After creating the live ticker price page, add a functionality to sort the data based on 24 hour change percentage. The data should be updated through websocket in real time in the same way how do you see data on pi42.com trade screen. The page should have columns as below.
+
+
+
+
+
