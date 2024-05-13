@@ -93,7 +93,7 @@ function Home(props) {
         </div>
       </div>
      
-      <h1 className={`${styles.heading} `}>Real-time pricing: Get live updates on crypto prices from our platform.</h1>
+      <h1 className={`${styles.heading} `}>Welcome to Pi42!</h1>
       <p className={`${styles.message} ${styles.neonEffect}`}>{currentUser ? `Welcome back, ${currentUser?.displayName}!` : "Please login to view real-time updates."}</p>
       {currentUser ? (
         isLoading?(<div style={{ textAlign: 'center', padding: '20px' }}>
@@ -103,17 +103,8 @@ function Home(props) {
 
 ): (
       <>
-        <h2>Welcome to Pi42!</h2>
-        <p>
-          Pi42 is your go-to platform for trading crypto contracts. With real-time updates on crypto prices and a user-friendly interface, we make it easy for you to stay ahead in the crypto market.
-        </p>
-        <h3>Why Choose Pi42?</h3>
-        <ul>
-          <li>Real-time pricing: Get live updates on crypto prices from our platform.</li>
-          <li>Secure authentication: We prioritize the security of your account with Firebase authentication.</li>
-          <li>User-friendly interface: Our platform is designed to be intuitive and easy to use for both beginners and experienced traders.</li>
-          <li>Share your trades: Easily share details of your crypto contracts with friends and colleagues.</li>
-        </ul>
+        <h2>Real-time pricing: Get live updates on crypto prices from our platform.</h2>
+        
         <p>
           Ready to start trading? <Link to="/login" className={styles.neonEffect}>Login</Link> or <Link to="/signup" className={styles.neonEffect}>sign up</Link> now to get started!
         </p>
