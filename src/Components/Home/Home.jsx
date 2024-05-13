@@ -12,61 +12,7 @@ function Home(props) {
   const { currentUser } = useAuth();
   const [isLoading, setIsLoading] = useState(true);
 
-  const options = {
-    chart: {
-      type: 'candlestick',
-      height: 500,
-      width: '100%'
-    },
-    title: {
-      text: 'Stock Price Movement',
-      align: 'left'
-    },
-    xaxis: {
-      type: 'datetime'
-    },
-    tooltip: {
-      enabled: true,
-      theme: 'dark',
-      style: {
-        fontSize: '12px',
-        fontFamily: undefined
-      },
-      x: {
-        show: true,
-        format: 'dd MMM yyyy'
-      },
-      y: {
-        formatter: function (val) {
-          return val.toFixed(2);
-        }
-      },
-      fillSeriesColor: false,
-      marker: {
-        show: false,
-      },
-      fixed: {
-        enabled: false,
-        position: 'topRight',
-        offsetX: 0,
-        offsetY: 0,
-      },
-    },
-    yaxis: {
-      tooltip: {
-        enabled: true
-      }
-    }
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const newData = [...series[0].data, ...generateNewData(series[0].data)];
-      setSeries([{ data: newData }]);
-      setIsLoading(false);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [series]);
+  
 
   return (
     <div className={styles.container}>
@@ -87,7 +33,22 @@ function Home(props) {
         </div>
       </div>
       <div className={styles.content}>
-        <h2>Welcome to our Crypto Trading Platform</h2>
+        <div>
+      <h2>Welcome to Pi42!</h2>
+      <p>
+        Pi42 is your go-to platform for trading crypto contracts. With real-time updates on crypto prices and a user-friendly interface, we make it easy for you to stay ahead in the crypto market.
+      </p>
+      <h3>Why Choose Pi42?</h3>
+      <ul>
+        <li>Real-time pricing: Get live updates on crypto prices from our platform.</li>
+        <li>Secure authentication: We prioritize the security of your account with Firebase authentication.</li>
+        <li>User-friendly interface: Our platform is designed to be intuitive and easy to use for both beginners and experienced traders.</li>
+        <li>Share your trades: Easily share details of your crypto contracts with friends and colleagues.</li>
+      </ul>
+      <p>
+        Ready to start trading? Login or sign up now to get started!
+      </p>
+    </div>
         <p>{currentUser ? `Welcome back, ${currentUser?.displayName}!` : "Please login to view real-time updates."}</p>
         {currentUser ? (
           isLoading ? (
