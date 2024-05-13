@@ -15,7 +15,54 @@ function Home(props) {
   const { currentUser } = useAuth();
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log(currentUser,"currr ");
+  console.log(currentUser,"currr ")
+  const options = {
+    chart: {
+      type: 'candlestick',
+      height: 1, // Set chart height
+      width: '100%' // Set chart width
+    },
+    title: {
+      text: 'Stock Price Movement',
+      align: 'left'
+    },
+    xaxis: {
+      type: 'datetime'
+    },
+    tooltip: {
+      enabled: true,
+      theme: 'dark', // You can use 'dark' or 'light' based on your preference or set custom styles
+      style: {
+        fontSize: '12px',
+        fontFamily: undefined
+      },
+      x: {
+        show: true,
+        format: 'dd MMM yyyy'
+      },
+      y: {
+        formatter: function (val) {
+          return val.toFixed(2);
+        }
+      },
+      // Custom tooltip style
+      fillSeriesColor: false,
+      marker: {
+        show: false,
+      },
+      fixed: {
+        enabled: false,
+        position: 'topRight',
+        offsetX: 0,
+        offsetY: 0,
+      },
+    },
+    yaxis: {
+      tooltip: {
+        enabled: true
+      }
+    }
+  };
   
 
   useEffect(() => {
@@ -67,6 +114,38 @@ function Home(props) {
 
 }
 
+function generateInitialData() {
+  const data = [];
+  let time = new Date(); // Start from today
+  time.setHours(0, 0, 0, 0); // Normalize the time part to start of day
 
+  for (let i = 0; i < 60; i++) { // Change from 10 to 30 for one month data
+    data.push({
+      x: new Date(time),
+      y: [
+        Math.floor(Math.random() * 100) + 50, // Open
+        Math.floor(Math.random() * 100) + 60, // High
+        Math.floor(Math.random() * 100) + 40, // Low
+        Math.floor(Math.random() * 100) + 55  // Close
+      ]
+    });
+    time.setDate(time.getDate() - 1); // Move back one day
+  }
+  return data.reverse(); // Reverse to start the oldest to the newest
+}
+
+function generateNewData(data) {
+  const lastData = data[data.length - 1];
+  const newTime = new Date(lastData.x).getTime() + 86400000; // plus one day
+  return [{
+    x: new Date(newTime),
+    y: [
+      Math.floor(Math.random() * 100) + 50, 
+      Math.floor(Math.random() * 100) + 60, 
+      Math.floor(Math.random() * 100) + 40, 
+      Math.floor(Math.random() * 100) + 55
+    ]
+  }];
+}
 
 export default Home;
