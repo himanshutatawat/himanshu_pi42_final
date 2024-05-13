@@ -60,127 +60,43 @@ function Signup() {
           noValidate
           autoComplete="off"
         >
-          {/* Other input fields remain the same */}
           <TextField
-        label="Name"
-        variant="outlined"
-        value={values.name}
-        style={{marginBottom:"15px"}}
-        onChange={handleChange('name')}
-        placeholder="Enter your name"
-        fullWidth
-        InputLabelProps={{
-          style: { color: 'white' },
-        }}
-        InputProps={{
-          sx: {
-            '& fieldset': {
-              borderColor: 'white', // Normal border color
-            },
-            '&:hover fieldset': {
-              borderColor: 'white', // Hover border color
-            },
-            '&.Mui-focused fieldset': {
-              borderColor: 'red', // Border color when input is focused
-            },
-          },
-        }}
-        sx={{
-          '& .MuiInputBase-input': { color: 'white' }, // Changes the input text color
-        }}
-      />
-      <TextField
-        label="Email"
-        variant="outlined"
-        value={values.email}
-        onChange={handleChange('email')}
-        placeholder="Enter email address"
-        style={{marginBottom:"15px"}}
-
-        fullWidth
-        InputLabelProps={{
-          style: { color: 'white' },
-        }}
-        InputProps={{
-          sx: {
-            '& fieldset': {
-              borderColor: 'white', // Normal border color
-            },
-            '&:hover fieldset': {
-              borderColor: 'white', // Hover border color
-            },
-            '&.Mui-focused fieldset': {
-              borderColor: 'red', // Border color when input is focused
-            },
-          },
-        }}
-        sx={{
-          '& .MuiInputBase-input': { color: 'white' }, // Changes the input text color
-        }}
-      />
-      <TextField
-        label="Password"
-        variant="outlined"
-        type="password"
-        value={values.pass}
-        onChange={handleChange('pass')}
-        style={{marginBottom:"15px"}}
-
-        placeholder="Enter Password"
-        fullWidth
-        InputLabelProps={{
-          style: { color: 'white' },
-        }}
-        InputProps={{
-          sx: {
-            '& fieldset': {
-              borderColor: 'white',
-            },
-            '&:hover fieldset': {
-              borderColor: 'white',
-            },
-            '&.Mui-focused fieldset': {
-              borderColor: 'red',
-            },
-          },
-        }}
-        sx={{
-          '& .MuiInputBase-input': { color: 'white' },
-        }}
-      />
-          <TextField
-            label="Confirm Password"
+            label="Name"
             variant="outlined"
-            type="password"
-            value={values.confirmPass}
-            onChange={handleChange('confirmPass')}
-            placeholder="Confirm Password"
+            value={values.name}
+            onChange={handleChange('name')}
+            placeholder="Enter your name"
             fullWidth
             InputLabelProps={{
-              style: { color: 'white' },
+              style: { color: 'black' }, // Change label color to black
             }}
             InputProps={{
               sx: {
                 '& fieldset': {
-                  borderColor: 'white',
+                  borderColor: 'black', // Change border color to black
                 },
                 '&:hover fieldset': {
-                  borderColor: 'white',
+                  borderColor: 'black', // Change hover border color to black
                 },
                 '&.Mui-focused fieldset': {
-                  borderColor: 'red',
+                  borderColor: 'red', // Border color when input is focused
                 },
+              },
+              inputProps: {
+                style: { color: 'black' }, // Change text color to black
+                placeholderTextColor: 'gray', // Change placeholder text color to gray
               },
             }}
             sx={{
-              '& .MuiInputBase-input': { color: 'white' }, // Ensures text color consistency
+              '& .MuiInputBase-input': { color: 'black' }, // Changes the input text color to black
             }}
           />
+          {/* Other input fields remain the same */}
         </Box>
         <div className={styles.footer}>
           <b className={styles.error}>{errorMsg}</b>
           <button onClick={handleSubmission} disabled={submitButtonDisabled}>
-          {submitButtonDisabled ? (
+            {submitButtonDisabled ? (
               <CircularProgress size={24} style={{ color: 'white' }} />
             ) : (
               "Signup"
